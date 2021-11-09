@@ -24,21 +24,21 @@ int main(){
         printf("        1. Write        \n");
         printf("        2. Read         \n");
         printf("        3. Exit         \n");
-        scanf("%c",&option);
+        scanf(" %c",&option);
         printf("You just choose: %c\n",option);
         switch (option){
         case '1':
             // printf("Type the string what you want to write into device file:\n");
-            // scanf("%[^\n]s", write_buff); // not working properly
-            strcpy(write_buff,"Dao Van Toan");
+            scanf(" %[^\t\n]s", write_buff); // not working properly
+            // strcpy(write_buff,"Dao Van Toan");
             write(fd,write_buff,strlen(write_buff));
             // flush(fd);   // to save data in file directly, dont need to wait close file
             printf("Write done\n");
             break;
         case '2':
-            printf("Data is reading...");
+            printf("Data is reading...\n");
             read(fd,read_buff,buff_size);
-            printf("Data: %s\n\n",read_buff);
+            printf("Data: \"%s\"\n\n",read_buff);
             break;
         case '3':
             close(fd);
