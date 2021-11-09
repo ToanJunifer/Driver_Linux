@@ -19,8 +19,8 @@ static int      chr_driver_init(void);
 static void     chr_driver_exit(void);
 static int      my_open      (struct inode * inode, struct file * file);
 static int      my_release   (struct inode * inode, struct file * file);
-static ssize_t  my_read  (struct file * filp, char __user * buf, size_t len, loff_t * off);
-static ssize_t  my_write (struct file * filp, const char __user *buf , size_t len, loff_t * off);
+static ssize_t  my_read  (struct file *filp, char __user *buf       , size_t len, loff_t *off);
+static ssize_t  my_write (struct file *filp, const char __user *buf , size_t len, loff_t *off);
 
 static int my_open(struct inode * inode, struct file * file){
     // Creating physical memory
@@ -38,15 +38,15 @@ static int my_release (struct inode * inode, struct file * file){
     return 0;
 }
 
-static ssize_t my_read  (struct file * filp, char __user * buf, size_t len, loff_t * off){
+static ssize_t my_read  (struct file *filp, char __user *buf, size_t len, loff_t *off){
     copy_to_user(buf,kernel_buffer,mem_size);
-    printk(KERN_INFO "Data read: Done.\n");
+    printk(KERN_INFO "Data read: \"%s\"\n",kernel_buffer);
     return mem_size;
 }
 
-static ssize_t my_write (struct file * filp, const char __user *buf , size_t len, loff_t * off){
+static ssize_t my_write (struct file *filp, const char __user *buf, size_t len, loff_t *off){
     copy_to_user(kernel_buffer,buf,len);
-    printk(KERN_INFO "Data is written successfully");
+    printk(KERN_INFO "Data is written successfully: %s",buf);
     return len;
 }
 
