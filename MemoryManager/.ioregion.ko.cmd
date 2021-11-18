@@ -1,1 +1,0 @@
-cmd_/home/toanrd/Desktop/Driver_Linux/MemoryManager/ioregion.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id  -T ./scripts/module-common.lds -o /home/toanrd/Desktop/Driver_Linux/MemoryManager/ioregion.ko /home/toanrd/Desktop/Driver_Linux/MemoryManager/ioregion.o /home/toanrd/Desktop/Driver_Linux/MemoryManager/ioregion.mod.o;  true

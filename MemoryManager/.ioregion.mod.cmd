@@ -1,1 +1,0 @@
-cmd_/home/toanrd/Desktop/Driver_Linux/MemoryManager/ioregion.mod := { echo  /home/toanrd/Desktop/Driver_Linux/MemoryManager/ioregion.o;  echo; } > /home/toanrd/Desktop/Driver_Linux/MemoryManager/ioregion.mod

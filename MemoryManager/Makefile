@@ -1,14 +1,14 @@
-# work with: sudo make -C /usr/src/linux-headers-5.4.0-89-generic M=$('pwd') modules
-obj-m	:= ioregion.o
+# work with: sudo make -C /usr/src/linux-headers-5.11.0-40-generic M=$('pwd') modules
+obj-m	:= ioport.o
 
-KDIR	:= /lib/modules/$(shell uname -r)/build
-PWD		:= $(shell pwd)
+KDIR	:= /usr/src/linux-headers-$(shell uname -r)
+PWD		:= $(shell 'pwd')
 
 default:
-	$(MAKE) -C $(KDIR)	SUBDIRS=$(PWD) modules
+	$(MAKE) -C $(KDIR)	M=$(PWD) modules
 
 install:
-	$(MAKE)	-C $(KDIR)	SUBDIRS=$(PWD) module_install
+	$(MAKE)	-C $(KDIR)	M=$(PWD) module_install
 
 clean:
-	$(MAKE) -C $(KDIR)	SUBDIRS=$(PWD) clean
+	$(MAKE) -C $(KDIR)	M=$(PWD) clean
