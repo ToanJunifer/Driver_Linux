@@ -1,0 +1,1 @@
+cmd_/home/toanrd/Desktop/1.Linux_Driver/Driver_Linux/Mutex/Module.symvers := sed 's/ko$$/o/' /home/toanrd/Desktop/1.Linux_Driver/Driver_Linux/Mutex/modules.order | scripts/mod/modpost -m -a   -o /home/toanrd/Desktop/1.Linux_Driver/Driver_Linux/Mutex/Module.symvers -e -i Module.symvers   -T -
