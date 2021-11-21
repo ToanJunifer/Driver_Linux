@@ -1,5 +1,5 @@
 # work with: sudo make -C /usr/src/linux-headers-5.11.0-40-generic M=$('pwd') modules
-obj-m	:= workQueueStatic.o
+obj-m	:= ownWorkQueue.o
 
 KDIR	:= /usr/src/linux-headers-$(shell uname -r)
 PWD		:= $(shell 'pwd')
